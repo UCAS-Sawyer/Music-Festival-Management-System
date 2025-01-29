@@ -62,6 +62,11 @@ def TicketSalesAndAttendee(Festivals):
         #If the festival does not exist
         else:
             print(f"\nFestival {FestivalName} does not exist.")
-            maint()
+            main()
+
+#Clearing Screen
+print("\033[H\033[J")
+print("\nWelcome to the Personal Library Program(PLP)")
+
 
 TicketSalesAndAttendee(Festivals)
