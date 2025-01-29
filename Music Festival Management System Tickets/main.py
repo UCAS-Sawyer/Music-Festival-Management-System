@@ -2,7 +2,7 @@
 
 #Example Festival
 Festivals = [{
-    "Festival Name" : "Sun", 
+    "Festival Name" : "Kuthulu Festival Of Winter Solstice By Squiddles", 
     "Attendees": []
     }]
 
