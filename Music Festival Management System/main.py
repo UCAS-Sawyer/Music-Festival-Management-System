@@ -49,7 +49,7 @@ def ArtistManagement(Artists):
                     mainforArtistManagement()
                 elif choice == "3":
                     ################################################################################################################# Ask how to check if it will work
-                    Newduration = input("\nEnter the new duration: \t")
+                    x["Duration"] = input("\nEnter the new duration: \t")
                     print(f"\nThe new data is, {x}")
                     mainforArtistManagement()
                 else:
