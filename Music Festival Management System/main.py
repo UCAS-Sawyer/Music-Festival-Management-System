@@ -72,6 +72,7 @@ def ArtistManagement(Artists):
     
     def ViewArtists(Artists):
         print(f"\nAll of the artists are {Artists}")
+        mainforArtistManagement()
 
     def mainforArtistManagement():
         choice = input("\nChoose what you want to do, 1: Add Artist, 2: Edit Artist, 3: Remove Artist, 4: View All Artists, 5: Quit : \t")
