@@ -6,7 +6,7 @@ Festivals = [{
     "Attendees": []
     }]
 
-def TicketSalesAdnAttendee(Festivals):
+def TicketSalesAndAttendee(Festivals):
 
     #Exceptions for ints
     def intchecker(Inputx):
@@ -62,5 +62,6 @@ def TicketSalesAdnAttendee(Festivals):
         #If the festival does not exist
         else:
             print(f"\nFestival {FestivalName} does not exist.")
+            maint()
 
-TicketSalesAdnAttendee(Festivals)
+TicketSalesAndAttendee(Festivals)
