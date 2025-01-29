@@ -66,7 +66,6 @@ def TicketSalesAndAttendee(Festivals):
 
 #Clearing Screen
 print("\033[H\033[J")
-print("\nWelcome to the Personal Library Program(PLP)")
 
 
 TicketSalesAndAttendee(Festivals)
