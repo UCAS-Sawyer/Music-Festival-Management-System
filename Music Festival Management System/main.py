@@ -390,7 +390,9 @@ def main():
 
 #If the user chose exit:
     elif choice == "6":
-        pass
+        print("\nExiting program.")
+        raise SystemExit
+        
 
 #If the user chooses an invalid option:
     else:
