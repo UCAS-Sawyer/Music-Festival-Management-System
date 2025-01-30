@@ -6,12 +6,6 @@ schedule = []
 #Venue list:
 venues = []
 
-#Example Festival
-Festivals = [{
-    "Festival Name" : "Kuthulu Festival Of Winter Solstice By Squiddles", 
-    "Attendees": []
-    }]
-
 def ArtistManagement(Artists):
 
     #Exceptions for floats
@@ -103,7 +97,7 @@ def ArtistManagement(Artists):
         mainforArtistManagement()
 
 ###TicketSales Function
-def TicketSalesAndAttendee(Festivals):
+def TicketSalesAndAttendee(venues):
 
     #Exceptions for ints
     def intchecker(Inputx):
@@ -117,9 +111,9 @@ def TicketSalesAndAttendee(Festivals):
     FestivalName = input("\nWhat is the name of the festival: \t")
 
     #For each festival in Festivals
-    for x in Festivals:
+    for x in venues:
         #If the festival exists
-        if x["Festival Name"] == FestivalName:
+        if x["name"] == FestivalName:
             NumOfTickets = intchecker(input("\nHow many tickets are you inputting: \t"))
             if NumOfTickets != False:
                 #For each ticket
@@ -250,7 +244,8 @@ def venueManagement():
         venue = {
             "name": name,
             "location": location,
-            "equipment": equipment  
+            "equipment": equipment ,
+            "Attendees" : []
         }
         venues.append(venue)
 
