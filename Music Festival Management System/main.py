@@ -47,17 +47,21 @@ def ArtistManagement(Artists):
                     x["Name"] = input("\nEnter the new name: \t")
                     print(f"\nThe new data is, {x}")
                     mainforArtistManagement()
+                    return
                 elif choice == "2":
                     x["Genre"] = input("\nEnter the new genre: \t")
                     print(f"\nThe new data is, {x}")
                     mainforArtistManagement()
+                    return
                 elif choice == "3":
                     x["Duration"] = input("\nEnter the new duration: \t")
                     print(f"\nThe new data is, {x}")
                     mainforArtistManagement()
+                    return
                 else:
                     print("\nThat is not a valid input.")
                     mainforArtistManagement()
+                    return
 
         #If the artist does not exists    
         print(f"\nArtist {name} does not exist.")
