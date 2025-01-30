@@ -3,6 +3,8 @@
 Artists = []
 schedule = []
 
+#Venue list:
+venues = []
 
 #Example Festival
 Festivals = [{
@@ -217,6 +219,141 @@ def schedule_management(schedule):
 
     # Call the function to manage the schedule
     schedule_management_changes()
+
+#Venue Management Function:
+def venueManagement():
+    
+	#Ask the user if they want to print all venues, add a venue, edit a venue, or remove a venue:
+    choice = input("\nWhat would you like to do?\n1 = print all venues\n2 = add a venue\n3 = edit a venue\n4 = remove a venue\n5 = exit\n")
+
+	#If the user chose print all venues:
+    if choice == "1":
+		#Print all venues on the list:
+        for i in venues:
+            for key, value in i.items():
+                print(f"{key}: {value}")
+            print("")
+
+	#If the user chose add a venue:
+    elif choice == "2":
+
+		#Ask the user what the name of the venue is:
+        name = input("\nWhat is the name of the venue?\n")
+
+		#Ask the user for the location of the venue:
+        location = input("\nWhere is the venue located?\n")
+
+		#Ask the user for the equipment needed for the venue:
+        equipment = input("\nWhat equipment is required for the venue?\n")
+
+		#Add the venue to the list as specified by the user:
+        venue = {
+            "name": name,
+            "location": location,
+            "equipment": equipment  
+        }
+        venues.append(venue)
+
+        #Tell the user the venue was added successfully:
+        print("\nVenue added.")
+
+	
+	#If the user chose edit a venue:
+    elif choice == "3":
+
+		#Ask the user which venue they want to edit:
+        venue = input("\nWhat is the name of the venue you would like to edit?\n")
+
+        #Check to make sure the user inputted a venue that exists:
+        existant = False
+        for i in venues:
+            if i["name"] == venue:
+                existant = True
+        if existant == False:
+            print("\nThat venue is not in the list, sorry. :/")
+            venueManagement()
+
+		#Ask the user what they want to change about the venue:
+        change = input("\nWhat would you like to change about the venue?\n1 = name\n2 = location\n3 = equipment\n")
+
+        #If the user chose to change the venue's name:
+        if change == "1":
+
+            #Ask the user what they want to change the venue's name to:
+            newName = input("\nWhat would you like the name of the venue to be?\n")
+
+            #Change the name of the venue as specified by the user:
+            for i in venues:
+                if i["name"] == venue:
+                    i.update({"name": newName})
+
+            #Tell the user the change was successful:
+            print("\nName successfully changed.")
+
+        #If the user chose to change the venue's location:
+        elif change == "2":
+
+            #Ask the user what they want to change the venue's location to:
+            newLocation = input("\nWhat would you like the venue's location to be?\n")
+
+            #Change the location of the venue as specified by the user:
+            for i in venues:
+                if i["name"] == venue:
+                    i.update({"location": newLocation})
+
+            #Tell the user the change was successful:
+            print("\nLocation successfully changed.")
+
+        #If the user chose to change the venue's equipment:
+        elif change == "3":
+
+            #Ask the user what they want to change the venue's equipment to:
+            newEquipment = input("\nWhat would you like the venue's equipment to be changed to?\n")
+
+            #Change the equipment of the venue as specified by the user:
+            for i in venues:
+                if i["name"] == venue:
+                    i.update({"equipment": newEquipment})
+
+            #Tell the user the change was successful:
+            print("\nEquipment successfully changed.")
+
+        #If the user did not choose a valid option:
+        else:
+            #Tell the user they chose an invalid option:
+            print("\nThat isn't an option; please try again.")
+            venueManagement()
+
+	#If the user chose remove a venue:
+    elif choice == "4":
+
+		#Ask the user what venue they want to remove:
+        byeByeVenue = input("\nWhat is the name of the venue you would like to remove?\n")
+
+		#Remove venue from list as specified by the user:
+        removed = False
+        for i in venues:
+            if i["name"] == byeByeVenue:
+                venues.remove(i)
+                removed = True
+
+        #Tell the user if the venue was successfully removed:
+        if removed == False:
+            print("\nThat venue isn't on the list. :/")
+        else:
+            print("\nVenue successfuly removed.")
+
+    #If the user chose to exit:
+    elif choice == "5":
+
+        pass
+
+    #If the user didn't choose a valid option:
+    else:
+        #Tell the user they've made a mistake:
+        print("\nINVALID INPUT\n\nPlease try again.")
+        #Run the function again:
+        venueManagement()
 
 #Clearing Screen
 print("\033[H\033[J")
