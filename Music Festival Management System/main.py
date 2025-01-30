@@ -350,5 +350,55 @@ def venueManagement():
         #Run the function again:
         venueManagement()
 
+
+#Main Function:
+def main():
+
+	#Ask the user what function they want to perform:
+    choice = input("\nWhat would you like to do?\n1 = manage artists\n2 = manage schedule\n3 = manage venues\n4 = ticket sales/attendee management\n5 = search\n6 = exit\n")
+
+#If the user chose manage artists:
+    if choice == "1":
+
+	#Artist Management function call:
+        ArtistManagement(Artists)
+
+#If the user chose manage schedule:
+    elif choice == "2":
+
+	#Schedule Management function call:
+        schedule_management(schedule)
+
+
+#If the user chose manage venues:
+    elif choice == "3":
+
+	#Venue Management function call:
+        venueManagement(venues)
+
+#If the user chose ticket sales/attendee management:
+    elif choice == "4":
+
+	#Ticket Sales and Attendee Management function call:
+        TicketSalesAndAttendee(venues)
+
+#If the user chose search:
+    elif choice == "5":
+
+	#Search function call:
+        search()
+
+#If the user chose exit:
+    elif choice == "6":
+        pass
+
+#If the user chooses an invalid option:
+    else:
+        print("\nINVALID OPTION\n\nPlease try again. :/")
+
+    main()
+
 #Clearing Screen
 print("\033[H\033[J")
+
+main()
