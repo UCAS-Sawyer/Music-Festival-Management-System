@@ -70,7 +70,7 @@ def ArtistManagement(Artists):
             if x["Name"] == name:
                 Artists.remove(x)
                 print(f"\nThe artist {name} has been removed.")
-                mainforArtistManagement
+                mainforArtistManagement()
         print("\nAn atrist of that name does not exist.")
     
     def ViewArtists(Artists):
