@@ -88,7 +88,7 @@ def ArtistManagement(Artists):
         elif choice == "4":
             ViewArtists(Artists)
         elif choice == "5":
-            main(Artists)
+            main()
         else:
             print("\nInvalid choice.")
             mainforArtistManagement()
@@ -215,7 +215,7 @@ def schedule_management(schedule):
     schedule_management_changes()
 
 #Venue Management Function:
-def venueManagement():
+def venueManagement(venues):
     
 	#Ask the user if they want to print all venues, add a venue, edit a venue, or remove a venue:
     choice = input("\nWhat would you like to do?\n1 = print all venues\n2 = add a venue\n3 = edit a venue\n4 = remove a venue\n5 = exit\n")
