@@ -1,6 +1,14 @@
 #Music Festival Management System, Sawyer Wood, Alishya Xavier, Evan McCabe
 
 Artists = []
+schedule = []
+
+
+#Example Festival
+Festivals = [{
+    "Festival Name" : "Kuthulu Festival Of Winter Solstice By Squiddles", 
+    "Attendees": []
+    }]
 
 def ArtistManagement(Artists):
 
@@ -93,12 +101,7 @@ def ArtistManagement(Artists):
     while True:
         mainforArtistManagement()
 
-#Example Festival
-Festivals = [{
-    "Festival Name" : "Kuthulu Festival Of Winter Solstice By Squiddles", 
-    "Attendees": []
-    }]
-
+###TicketSales Function
 def TicketSalesAndAttendee(Festivals):
 
     #Exceptions for ints
@@ -156,6 +159,65 @@ def TicketSalesAndAttendee(Festivals):
         else:
             print(f"\nFestival {FestivalName} does not exist.")
             main()
+
+###Schedule management
+def schedule_management(schedule):
+
+    def remove_artist():
+        remove_artist_name = input("What is the artist's name you want to remove: ")
+        remove_artist_stage = input(f"What stage do you want to remove {remove_artist_name} from (example: 1): ")
+        remove_artist_time = input(f"What time slot do you want to remove {remove_artist_name} from (example: 9:30 a.m. ): ")
+
+        remove_entry = (remove_artist_name, remove_artist_time, remove_artist_stage)
+        if remove_entry in schedule:
+            schedule.remove(remove_entry)
+            print("\nArtist removed from the schedule.\n")
+        else:
+            print("\nThat is not currently scheduled.\n")
+
+
+
+    def add_artist():
+        add_artist_name = input("What is the artist's name you want to add: ")
+        add_artist_stage = input(f"What stage do you want to add {add_artist_name} to (example: 1): ")
+        add_artist_time = input(f"What time slot do you want to add {add_artist_name} to (example: 9:30 a.m. ): ")
+
+        new_entry = (add_artist_name, add_artist_time, add_artist_stage)
+        if any(entry for entry in schedule if entry[1] == add_artist_time and entry[2] == add_artist_stage):
+            print("\nThat spot is already assigned.\n")
+        else:
+            schedule.append(new_entry)
+            print("\nArtist added to the schedule.\n")
+
+
+
+    def display_schedule():
+        if not schedule:
+            print("\nThe schedule is currently empty.\n")
+        else:
+            print("\nCurrent schedule:")
+            for entry in schedule:
+                print(f"\nArtist: {entry[0]}, Time slot: {entry[1]}, Stage: {entry[2]}\n")
+
+
+
+    def schedule_management_changes():
+        while True:
+            option = input('What do you want to change:\n1. Remove an artist from a time slot and stage\n2. Add an artist from a time slot and stage\n3. View the schedule\n4. Exit\n')
+            if option == '1':
+                remove_artist()
+            elif option == '2':
+                add_artist()
+            elif option == '3':
+                display_schedule()
+            elif option == '4':
+                break
+            else:
+                print('That is not an option')
+                continue
+
+    # Call the function to manage the schedule
+    schedule_management_changes()
 
 #Clearing Screen
 print("\033[H\033[J")
