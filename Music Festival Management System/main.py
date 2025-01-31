@@ -6,6 +6,7 @@ schedule = []
 #Venue list:
 venues = []
 
+#Artist Management Made by: Sawyer
 def ArtistManagement(Artists):
 
     #Exceptions for floats
@@ -100,7 +101,7 @@ def ArtistManagement(Artists):
     while True:
         mainforArtistManagement()
 
-###TicketSales Function
+###TicketSales Function Made by: Sawyer
 def TicketSalesAndAttendee(venues):
 
     #Exceptions for ints
@@ -162,7 +163,7 @@ def TicketSalesAndAttendee(venues):
 #This helps check if the time is right throughout the code
 import re
 
-#Schedule management function
+#Schedule management function Made By: Alishya
 def schedule_management(schedule):
 
     def validate_time_slot(time_slot):
@@ -241,7 +242,7 @@ def schedule_management(schedule):
     #This is called after the schedule management function is called
     schedule_management_changes()
 
-#Venue Management Function:
+#Venue Management Function Made By: Evan
 def venueManagement(venues):
     
 	#Ask the user if they want to print all venues, add a venue, edit a venue, or remove a venue:
@@ -378,7 +379,7 @@ def venueManagement(venues):
         venueManagement()
 
 
-#Main Function:
+#Main Function Made By: Evan
 def main():
 
 	#Ask the user what function they want to perform:
