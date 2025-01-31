@@ -457,31 +457,31 @@ def main(Artists, schedule, venues):
     if choice == "1":
 
 	#Artist Management function call:
-        ArtistManagement(Artists)
+        ArtistManagement(Artists, schedule, venues)
 
 #If the user chose manage schedule:
     elif choice == "2":
 
 	#Schedule Management function call:
-        schedule_management(schedule)
+        schedule_management(Artists, schedule, venues)
 
 #If the user chose manage venues:
     elif choice == "3":
 
 	#Venue Management function call:
-        venueManagement(venues)
+        venueManagement(Artists, schedule, venues)
 
 #If the user chose ticket sales/attendee management:
     elif choice == "4":
 
 	#Ticket Sales and Attendee Management function call:
-        TicketSalesAndAttendee(venues)
+        TicketSalesAndAttendee(Artists, schedule, venues)
 
 #If the user chose search:
     elif choice == "5":
 
 	#Search function call:
-        search(Artists, venues)
+        search(Artists, schedule, venues)
 
 #If the user chose exit:
     elif choice == "6":
