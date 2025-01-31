@@ -434,6 +434,7 @@ def search(Artists, schedule, venues):
                     existant = True
 
 		#Tell the user if the person the user wants to check does or does not have a ticket:
+        exists = False
         if exists == True:
             print("\nThat person has bought a ticket.")
         else:
