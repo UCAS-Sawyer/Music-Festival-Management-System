@@ -498,4 +498,5 @@ def main(Artists, schedule, venues):
 #Clearing Screen
 print("\033[H\033[J")
 
+print("Welcome to the Music Festival Management!")
 main(Artists, schedule, venues)
