@@ -294,7 +294,7 @@ def venueManagement(venues):
                 existant = True
         if existant == False:
             print("\nThat venue is not in the list, sorry. :/")
-            venueManagement()
+            venueManagement(venues)
 
 		#Ask the user what they want to change about the venue:
         change = input("\nWhat would you like to change about the venue?\n1 = name\n2 = location\n3 = equipment\n")
