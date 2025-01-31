@@ -164,7 +164,7 @@ def TicketSalesAndAttendee(Artists, schedule, venues):
 import re
 
 #Schedule management function Made By: Alishya
-def schedule_management(schedule):
+def schedule_management(Artists, schedule, venues):
 
     def validate_time_slot(time_slot):
         # Format found online for how to make sure the time is written correctly
@@ -243,7 +243,7 @@ def schedule_management(schedule):
     schedule_management_changes()
 
 #Venue Management Function Made By: Evan
-def venueManagement(venues):
+def venueManagement(Artists, schedule, venues):
     
 	#Ask the user if they want to print all venues, add a venue, edit a venue, or remove a venue:
     choice = input("\nWhat would you like to do?\n1 = print all venues\n2 = add a venue\n3 = edit a venue\n4 = remove a venue\n5 = exit\n")
@@ -379,7 +379,7 @@ def venueManagement(venues):
         venueManagement()
 
 #Search Function By Evan:
-def search(Artists, venues):
+def search(Artists, schedule, venues):
 
 	#Ask the user if they want to search for an artist, a venue, or a ticket:
     choice = input("\nWhat would you like to search for?\n1 = artist\n2 = venue\n3 = ticket\n4 = exit\n")
