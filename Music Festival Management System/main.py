@@ -376,7 +376,7 @@ def venueManagement(Artists, schedule, venues):
         #Tell the user they've made a mistake:
         print("\nINVALID INPUT\n\nPlease try again.")
         #Run the function again:
-        venueManagement()
+        venueManagement(Artists, schedule, venues)
 
 #Search Function By Evan:
 def search(Artists, schedule, venues):
