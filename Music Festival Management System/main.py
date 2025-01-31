@@ -112,7 +112,7 @@ def TicketSalesAndAttendee(venues):
             print("\nThat is not a valid input.")
             return False
 
-    FestivalName = input("\nWhat is the name of the festival: \t")
+    FestivalName = input("\nWhat is the name of the venue: \t")
 
     #For each festival in Festivals
     for x in venues:
@@ -156,7 +156,7 @@ def TicketSalesAndAttendee(venues):
                         print("\nthat is not a valid input.")
         #If the festival does not exist
         else:
-            print(f"\nFestival {FestivalName} does not exist.")
+            print(f"\nVenue {FestivalName} does not exist.")
             main()
 
 #This helps check if the time is right throughout the code
