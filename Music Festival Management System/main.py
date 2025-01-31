@@ -7,7 +7,7 @@ schedule = []
 venues = []
 
 #Artist Management Made by: Sawyer
-def ArtistManagement(Artists):
+def ArtistManagement(Artists, schedule, venues):
 
     #Exceptions for floats
     def floatchecker(Inputx):
@@ -93,7 +93,7 @@ def ArtistManagement(Artists):
         elif choice == "4":
             ViewArtists(Artists)
         elif choice == "5":
-            main()
+            main(Artists, schedule, venues)
         else:
             print("\nInvalid choice.")
             mainforArtistManagement()
@@ -102,7 +102,7 @@ def ArtistManagement(Artists):
         mainforArtistManagement()
 
 ###TicketSales Function Made by: Sawyer
-def TicketSalesAndAttendee(venues):
+def TicketSalesAndAttendee(Artists, schedule, venues):
 
     #Exceptions for ints
     def intchecker(Inputx):
@@ -158,7 +158,7 @@ def TicketSalesAndAttendee(venues):
         #If the festival does not exist
         else:
             print(f"\nVenue {FestivalName} does not exist.")
-            main()
+            main(Artists, schedule, venues)
 
 #This helps check if the time is right throughout the code
 import re
@@ -448,7 +448,7 @@ def search(Artists, venues):
         search(Artists, venues)
 
 #Main Function Made By: Evan
-def main():
+def main(Artists, schedule, venues):
 
 	#Ask the user what function they want to perform:
     choice = input("\nWhat would you like to do?\n1 = manage artists\n2 = manage schedule\n3 = manage venues\n4 = ticket sales/attendee management\n5 = search\n6 = exit\n")
@@ -493,9 +493,9 @@ def main():
     else:
         print("\nINVALID OPTION\n\nPlease try again. :/")
 
-    main()
+    main(Artists, schedule, venues)
 
 #Clearing Screen
 print("\033[H\033[J")
 
-main()
+main(Artists, schedule, venues)
